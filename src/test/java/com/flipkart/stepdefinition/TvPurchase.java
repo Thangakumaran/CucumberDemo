@@ -23,7 +23,7 @@ public class TvPurchase {
       static String mobileName;
 	@Given("user launces the flipkart appctn")
 	public void user_launces_the_flipkart_appctn() {
-		
+		System.out.println("Launch");
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("https://www.flipkart.com/");

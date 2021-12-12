@@ -1,6 +1,7 @@
 #Author: thangakumaran@your.domain.com
+@tv
 Feature: Tv Purchase
-  
+  @hardcode
   Scenario: Tv purchase
    Given user launces the flipkart appctn
     And user login by enter valid credentials
@@ -16,6 +17,7 @@ Feature: Tv Purchase
     And user click on the Tv name
     Then user click on add tocart 
     
+    @combined
      Scenario: Tv purchase by using one dim map
     Given user launces the flipkart appctn
     And user login by enter valid credentials
