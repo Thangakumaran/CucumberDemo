@@ -75,5 +75,11 @@ public class LaptopPurchase {
 		i.click();
 
 	}
+	
+	
+	
+	
+	
+	
  
 }
