@@ -12,7 +12,7 @@ Feature: Laptop
     And user click on the laptop name
     Then user click on add to cart
 
-  @combined @exe
+  @combined32 @exe
    Scenario: Laptop Purchase by using one dim list
    
     When user search the laptop by one dim list
@@ -21,11 +21,11 @@ Feature: Laptop
     Then user click on add to cart
  
     
-   #  Scenario: Laptop Purchase by using one dim map
+     Scenario: Laptop Purchase by using one dim map
    
-   # When user search the laptop by one dim map
-   # |1|acer Predator Helios 300 |
-    #|2|DELL Inspiron Ryzen 5 Quad Core 3450U|
-    # |3|DELL Inspiron Ryzen 5 Quad Core 3450U|
-    #And user click on the laptop name
-    #Then user click on add to cart
+    When user search the laptop by one dim map
+    |1|acer Predator Helios 300 |
+    |2|DELL Inspiron Ryzen 5 Quad Core 3450U|
+     |3|DELL Inspiron Ryzen 5 Quad Core 3450U|
+    And user click on the laptop name
+    Then user click on add to cart

@@ -12,23 +12,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.flipkart.objectrepository.TvPurchasePage;
+import com.flipkart.resources.CommonActions;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TvPurchase {
-      static WebDriver driver;
-      static String mobileName;
+public class TvPurchase extends CommonActions {
+	
+	CommonActions c = new CommonActions();
+   TvPurchasePage tv = new TvPurchasePage();
+	static String mobileName;
 	@Given("user launces the flipkart appctn")
 	public void user_launces_the_flipkart_appctn() {
 		System.out.println("Launch");
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.get("https://www.flipkart.com/");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+		
 	}
 
 	@Given("user login by enter valid credentials")
@@ -36,9 +37,9 @@ public class TvPurchase {
 		
 		  try {
 				
-				WebElement a = driver.findElement(By.xpath("//button[text()='✕']"));
-				a.isDisplayed();
-				a.click();
+				//WebElement a = driver.findElement(By.xpath("//button[text()='✕']"));
+				tv.getCloseButton().isDisplayed();
+				tv.getCloseButton().click();
 			} catch (Exception e) {
 				System.out.println("Login popup is closed");
 			}
@@ -48,8 +49,9 @@ public class TvPurchase {
 	public void user_search_the_Tv() throws InterruptedException {
 
 		mobileName="SAMSUNG 80 cm (32 inch) HD Ready LED Smart TV";
-		WebElement b = driver.findElement(By.xpath("//input[@type='text']"));
-		b.sendKeys("SAMSUNG 80 cm (32 inch) HD Ready LED Smart TV", Keys.ENTER);
+		//WebElement b = driver.findElement(By.xpath("//input[@type='text']"));
+	//	b.sendKeys("SAMSUNG 80 cm (32 inch) HD Ready LED Smart TV", Keys.ENTER);
+		c.insertText(tv.getSearchBox(), mobileName);
 		
 	}
 
@@ -76,20 +78,20 @@ public class TvPurchase {
 	public void user_click_on_add_tocart() {
 		WebElement t = driver.findElement(By.xpath("//button[text()='ADD TO CART']"));
 		JavascriptExecutor j = (JavascriptExecutor) driver;
-		j.executeScript("arguments[0].scrollIntoView(true)", t);
-		j.executeScript("arguments[0].click()", t);
-			t.click();
-			driver.quit();
+		j.executeScript("arguments[0].scrollIntoView(true)", tv.getAddToCart());
+		j.executeScript("arguments[0].click()", tv.getAddToCart());
+			tv.button(tv.getAddToCart());
+			//driver.quit();
 	}
 	
 	@When("user searching the Tv by one dim list")
-	public void user_searching_the_Tv_by_one_dim_list(DataTable dataTable) {
+	public  void user_searching_the_Tv_by_one_dim_list(DataTable dataTable) {
 		List<String> aslist = dataTable.asList(String.class);
-		WebElement b = driver.findElement(By.xpath("//input[@type='text']"));
+	
+	     
+	     WebElement b = driver.findElement(By.xpath("//input[@type='text']"));
 		b.sendKeys(aslist.get(1), Keys.ENTER);
-		
 		mobileName=aslist.get(1);
-	   
 	}
 
 

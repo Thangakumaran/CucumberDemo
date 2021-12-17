@@ -2,13 +2,14 @@
 @tv
 Feature: Tv Purchase
   @hardcode
-  Scenario: Tv purchase
+   Scenario: Tv purchase
    Given user launces the flipkart appctn
     And user login by enter valid credentials
     When user search the Tv
     And user click on the Tv name
     Then user click on add tocart 
     
+     @combined123
      Scenario: Tv purchase by using one dim list
     Given user launces the flipkart appctn
     And user login by enter valid credentials
@@ -17,7 +18,7 @@ Feature: Tv Purchase
     And user click on the Tv name
     Then user click on add tocart 
     
-    @combined
+    @combined1
      Scenario: Tv purchase by using one dim map
     Given user launces the flipkart appctn
     And user login by enter valid credentials

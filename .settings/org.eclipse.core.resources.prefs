@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/test/java/com/flipkart/objectrepository/LaptopPurchasePage.java=UTF-8
+encoding//src/test/java/com/flipkart/objectrepository/TvPurchasePage.java=UTF-8
 encoding//src/test/java/com/flipkart/stepdefinition/LaptopPurchase.java=UTF-8
 encoding//src/test/java/com/flipkart/stepdefinition/TvPurchase.java=UTF-8

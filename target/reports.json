@@ -1,0 +1,131 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 70210696500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Tv purchase by using one dim list",
+        "description": "",
+        "id": "tv-purchase;tv-purchase-by-using-one-dim-list",
+        "after": [
+          {
+            "result": {
+              "duration": 2691216700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 614858700,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "user launces the flipkart appctn",
+            "match": {
+              "location": "TvPurchase.user_launces_the_flipkart_appctn()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5808269600,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "user login by enter valid credentials",
+            "match": {
+              "location": "TvPurchase.user_login_by_enter_valid_credentials()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5527422700,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user searching the Tv by one dim list",
+            "match": {
+              "location": "TvPurchase.user_searching_the_Tv_by_one_dim_list(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "SAMSUNG 80 cm (32 inch) HD Ready LED Smart TV",
+                  "Mi 4A PRO 80 cm (32 inch) HD Ready LED Smart Android TV",
+                  "SONY BRAVIA 80 cm (32 inch) HD Ready LED Smart TV"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 43489814800,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user click on the Tv name",
+            "match": {
+              "location": "TvPurchase.user_click_on_the_Tv_name()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 9489803300,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user click on add tocart",
+            "match": {
+              "location": "TvPurchase.user_click_on_add_tocart()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tv"
+          },
+          {
+            "name": "@combined123"
+          }
+        ]
+      }
+    ],
+    "name": "Tv Purchase",
+    "description": "",
+    "id": "tv-purchase",
+    "keyword": "Feature",
+    "uri": "src/test/resources/Feature/TvPurchase.feature",
+    "tags": [
+      {
+        "name": "@tv",
+        "type": "Tag",
+        "location": {
+          "line": 2,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

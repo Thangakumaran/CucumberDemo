@@ -12,24 +12,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.flipkart.objectrepository.LaptopPurchasePage;
+import com.flipkart.resources.CommonActions;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class LaptopPurchase {
-	static WebDriver driver;
+public class LaptopPurchase extends CommonActions{
+	
+	CommonActions c = new CommonActions();
+	LaptopPurchasePage l= new LaptopPurchasePage();
+
 	static String laptopName;
 	@Given("user launches the flipkart application")
 	public void user_launches_the_flipkart_application() {
  
 		System.out.println("Launch");
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.get("https://www.flipkart.com/");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		
 	}
 
 	@Given("user login by entering credentials")
@@ -37,10 +39,11 @@ public class LaptopPurchase {
 	
 		  try {
 				
-				WebElement a = driver.findElement(By.xpath("//button[text()='✕']"));
-				a.isDisplayed();
-				a.click();
-			} catch (Exception e) {
+			//	WebElement a = driver.findElement(By.xpath("//button[text()='✕']"));
+				c.button(l.getCancelButton());
+				l.getCancelButton().isDisplayed();
+			}
+		  catch (Exception e) {
 				System.out.println("Login popup is closed");
 			}
 	}
@@ -49,8 +52,10 @@ public class LaptopPurchase {
 	public void user_search_the_laptop() {
 	
 		laptopName="ASUS TUF Dash F15 (2021)";
-		WebElement b = driver.findElement(By.xpath("//input[@type='text']"));
-		b.sendKeys("ASUS TUF Dash F15 (2021)", Keys.ENTER);
+		c.insertText(l.getTextBox(), laptopName);
+		
+		//WebElement b = driver.findElement(By.xpath("//input[@type='text']"));
+	    //	b.sendKeys("ASUS TUF Dash F15 (2021)", Keys.ENTER);
 		
 		
 	}
@@ -78,9 +83,9 @@ public class LaptopPurchase {
 	public void user_click_on_add_to_cart() {
 	  
 	
-		WebElement i = driver.findElement(By.xpath("//button[text()='ADD TO CART']"));
-		i.click();
-        driver.quit();
+	//	WebElement i = driver.findElement(By.xpath("//button[text()='ADD TO CART']"));
+		
+		l.getAddTocartElement().click();
 	}
 	
 
